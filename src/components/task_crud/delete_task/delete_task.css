@@ -1,0 +1,78 @@
+.delete-task-container {
+  margin-left: 8px;
+}
+
+.delete-task-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.delete-task-btn:hover {
+  background: #c0392b;
+  transform: scale(1.1);
+}
+
+.delete-task-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.delete-confirm {
+  display: flex;
+  gap: 4px;
+}
+
+.confirm-delete-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.confirm-delete-btn:hover {
+  background: #2ecc71;
+}
+
+.cancel-delete-btn {
+  background: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.cancel-delete-btn:hover {
+  background: #7f8c8d;
+}
+
+.confirm-delete-btn:disabled,
+.cancel-delete-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+} 

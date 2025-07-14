@@ -1,0 +1,74 @@
+.priority-dropdown {
+  position: relative;
+  margin-left: 8px;
+}
+
+.priority-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 60px;
+}
+
+.priority-btn.priority-low {
+  background: #27ae60;
+}
+
+.priority-btn.priority-medium {
+  background: #f39c12;
+}
+
+.priority-btn.priority-high {
+  background: #e74c3c;
+}
+
+.priority-btn:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.priority-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.priority-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+  min-width: 80px;
+}
+
+.priority-option {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+.priority-option:hover {
+  background: #f8f9fa;
+}
+
+.priority-option.active {
+  background: #e3f2fd;
+  color: #1976d2;
+  font-weight: 500;
+} 

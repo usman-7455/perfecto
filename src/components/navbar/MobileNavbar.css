@@ -1,0 +1,316 @@
+/* Mobile Navbar Styles */
+.mobile-navbar {
+  display: none; /* Hidden by default, shown only on mobile */
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #2c3e50 60%, #34495e 100%);
+  padding: 1rem;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 4px 18px rgba(44, 62, 80, 0.15);
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+
+.mobile-navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #f39c12;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.3s;
+}
+
+.mobile-navbar-logo:hover {
+  color: #fff;
+  transform: scale(1.08) rotate(-2deg);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: white;
+  z-index: 101;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 350px;
+  height: 100%;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  padding: 2rem 1.5rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+}
+
+.mobile-menu-overlay.active .mobile-menu-content {
+  transform: translateX(0);
+}
+
+/* Mobile Menu Header */
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-header h3 {
+  margin: 0;
+  color: #f39c12;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.2s;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Navigation Links */
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.mobile-nav-links li {
+  margin-bottom: 0.5rem;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+  color: #f39c12;
+}
+
+.mobile-nav-icon {
+  font-size: 1.3rem;
+  width: 24px;
+  text-align: center;
+}
+
+/* Mobile Auth Section */
+.mobile-auth-section {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-user-profile {
+  text-align: center;
+}
+
+.mobile-user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-user-avatar {
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-user-name {
+  color: #f39c12;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.mobile-sign-out-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.mobile-sign-out-btn:hover {
+  background: white;
+  color: #2c3e50;
+}
+
+.mobile-auth-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-auth-buttons button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mobile-navbar {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-navbar {
+    padding: 0.8rem;
+  }
+
+  .mobile-navbar-logo {
+    font-size: 1.3rem;
+  }
+
+  .mobile-menu-content {
+    width: 85%;
+    padding: 1.5rem 1rem;
+  }
+
+  .mobile-nav-link {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .mobile-menu-header h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .mobile-nav-link:hover {
+    transform: none;
+  }
+
+  .mobile-sign-out-btn:hover {
+    background: transparent;
+    color: white;
+  }
+}
+
+/* Animation for menu items */
+.mobile-nav-links li {
+  animation: slideInRight 0.3s ease forwards;
+  opacity: 0;
+}
+
+.mobile-nav-links li:nth-child(1) { animation-delay: 0.1s; }
+.mobile-nav-links li:nth-child(2) { animation-delay: 0.2s; }
+.mobile-nav-links li:nth-child(3) { animation-delay: 0.3s; }
+.mobile-nav-links li:nth-child(4) { animation-delay: 0.4s; }
+.mobile-nav-links li:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+} 

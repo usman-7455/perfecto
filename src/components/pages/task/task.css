@@ -1,0 +1,498 @@
+.task-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(44, 62, 80, 0.10);
+  padding: 2rem 1.5rem;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+
+.task-container h2 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: box-shadow 0.2s;
+  position: relative;
+}
+
+.task-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.task-item.completed {
+  opacity: 0.7;
+  text-decoration: line-through;
+  background: #e2e6ea;
+}
+
+.task-item.completed .task-content {
+  text-decoration: line-through;
+}
+
+.task-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.task-notes {
+  font-size: 0.98rem;
+  color: #888;
+  margin-left: 0.5rem;
+}
+
+.task-meta {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+}
+
+.priority {
+  padding: 0.2em 0.8em;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.93em;
+  color: #fff;
+  background: #b2bec3;
+}
+.priority.low {
+  background: #27ae60;
+}
+.priority.medium {
+  background: #f39c12;
+}
+.priority.high {
+  background: #e74c3c;
+}
+.due-date {
+  color: #2980b9;
+  font-weight: 500;
+}
+
+.task-error {
+  color: #e74c3c;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.task-create-bar {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.06);
+}
+
+.task-form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.task-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.task-input:focus {
+  outline: none;
+  border-color: #f39c12;
+}
+
+.priority-radio-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.priority-radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #495057;
+  cursor: pointer;
+}
+
+.priority-radio-group input[type="radio"] {
+  accent-color: #f39c12;
+  cursor: pointer;
+}
+
+.add-task-btn {
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.add-task-btn:hover {
+  background: #e67e22;
+  transform: translateY(-1px);
+}
+
+.add-task-btn:active {
+  transform: translateY(0);
+}
+
+.add-task-btn:disabled {
+  background: #bdc3c7;
+  color: #7f8c8d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.add-task-btn:disabled:hover {
+  background: #bdc3c7;
+  color: #7f8c8d;
+  transform: none;
+  box-shadow: 0 2px 8px rgba(243, 156, 18, 0.08);
+}
+
+/* Floating Action Button for Mobile */
+.floating-add-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(243, 156, 18, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-add-btn:hover {
+  background: #e67e22;
+  transform: scale(1.1);
+}
+
+.floating-add-btn:active {
+  transform: scale(0.95);
+}
+
+/* Mobile Form Modal */
+.mobile-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+
+.mobile-form-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.mobile-form-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+.mobile-form-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #7f8c8d;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.mobile-form-close:hover {
+  background: #f8f9fa;
+  color: #2c3e50;
+}
+
+.mobile-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.mobile-form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.mobile-form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.mobile-form-group input:focus {
+  outline: none;
+  border-color: #f39c12;
+}
+
+.mobile-priority-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mobile-priority-btn {
+  flex: 1;
+  padding: 0.8rem;
+  border: 2px solid #e9ecef;
+  background: white;
+  color: #495057;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mobile-priority-btn.active {
+  background: #f39c12;
+  color: white;
+  border-color: #f39c12;
+}
+
+.mobile-priority-btn:hover:not(.active) {
+  border-color: #f39c12;
+  color: #f39c12;
+}
+
+.mobile-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mobile-submit-btn:hover {
+  background: #e67e22;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .task-container {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .task-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .task-create-bar {
+    display: none; /* Hide on mobile, use floating button instead */
+  }
+
+  .floating-add-btn {
+    display: flex;
+  }
+
+  .task-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .task-actions {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .task-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .task-title {
+    font-size: 1.1rem;
+  }
+
+  .task-notes {
+    font-size: 0.9rem;
+  }
+
+  .mobile-form-modal {
+    margin: 1rem;
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-container {
+    margin: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .task-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .task-item {
+    padding: 0.8rem;
+  }
+
+  .task-title {
+    font-size: 1rem;
+  }
+
+  .task-actions {
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .floating-add-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+  }
+
+  .mobile-form-modal {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+
+  .mobile-form-header h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .task-item {
+    cursor: pointer;
+  }
+
+  .task-item:active {
+    background: #e9ecef;
+  }
+
+  .add-task-btn:hover {
+    transform: none;
+  }
+
+  .floating-add-btn:hover {
+    transform: none;
+  }
+
+  .mobile-priority-btn:hover:not(.active) {
+    border-color: #e9ecef;
+    color: #495057;
+  }
+
+  .mobile-submit-btn:hover {
+    background: #f39c12;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .task-container {
+    margin: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .floating-add-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .mobile-form-modal {
+    max-height: 80vh;
+  }
+}
