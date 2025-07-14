@@ -7,7 +7,7 @@ import Services from '../components/pages/Services/Services';
 import Contact from '../components/pages/Contact/Contact';
 import Tasks from '../components/pages/task/task';
 import SignIn from '../components/pages/SignIn/signin';
-import SignUp from '../components/pages/SignUp/SignUp';
+import SignUp from '../components/pages/signUp/SignUp';
 
 const AppRoutes = () => {
   return (
