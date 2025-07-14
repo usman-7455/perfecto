@@ -22,7 +22,7 @@ const About = () => {
         <div className="story-section">
           <h2>Our Story</h2>
           <p>
-            Founded in 2024, Perfecto was born from the frustration of juggling multiple 
+            Founded in 2025, Perfecto was born from the frustration of juggling multiple 
             task management tools that were either too complex or too simple. We set out 
             to create a solution that strikes the perfect balance - powerful enough for 
             serious productivity, yet simple enough for anyone to use.
@@ -56,18 +56,15 @@ const About = () => {
           <div className="team-grid">
             <div className="team-member">
               <div className="member-avatar">👨‍💻</div>
-              <h3>John Doe</h3>
-              <p>Founder & CEO</p>
+              <h3>usman</h3>
             </div>
             <div className="team-member">
               <div className="member-avatar">👩‍💻</div>
-              <h3>Jane Smith</h3>
-              <p>Lead Developer</p>
+              <h3>ALI</h3>
             </div>
             <div className="team-member">
               <div className="member-avatar">👨‍🎨</div>
-              <h3>Mike Johnson</h3>
-              <p>UI/UX Designer</p>
+              <h3>omar</h3>
             </div>
           </div>
         </div>
