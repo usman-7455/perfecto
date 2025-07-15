@@ -16,3 +16,15 @@ export const signOut = async () => {
 export const getUser = async () => {
   return await supabase.auth.getUser();
 };
+
+export const getAllUserEmails = async () => {
+  const { data, error } = await supabase.from('users_index').select('email');
+  if (error) throw error;
+  return data.map(user => user.email);
+};
+
+export const getUserIdByEmail = async (email) => {
+  const { data, error } = await supabase.from('users_index').select('id').eq('email', email).single();
+  if (error) throw error;
+  return data?.id;
+};

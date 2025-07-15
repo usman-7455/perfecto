@@ -19,6 +19,7 @@ const DesktopNavbar = () => {
         <li><Link to="/services">Services</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <li><Link to="/tasks">Tasks</Link></li>
+        {user && user.email === 'muhammadusmanarshad7455@gmail.com' && <li><Link to="/admin">Admin</Link></li>}
       </ul>
       
       <div className="desktop-navbar-auth-buttons">

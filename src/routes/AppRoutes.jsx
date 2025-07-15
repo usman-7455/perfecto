@@ -8,6 +8,7 @@ import Contact from '../components/pages/Contact/Contact';
 import Tasks from '../components/pages/task/task';
 import SignIn from '../components/pages/SignIn/signin';
 import SignUp from '../components/pages/signUp/SignUp';
+import AdminPortal from '../components/admin_portal';
 
 const AppRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const AppRoutes = () => {
       <Route path="/tasks" element={<Tasks />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/admin" element={<AdminPortal />} />
     </Routes>
   );
 };

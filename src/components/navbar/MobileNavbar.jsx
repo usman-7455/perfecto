@@ -82,6 +82,14 @@ const MobileNavbar = () => {
                 Tasks
               </Link>
             </li>
+            {user && user.email === 'muhammadusmanarshad7455@gmail.com' && (
+              <li>
+                <Link to="/admin" onClick={closeMobileMenu} className="mobile-nav-link">
+                  <span className="mobile-nav-icon">🛡️</span>
+                  Admin
+                </Link>
+              </li>
+            )}
           </ul>
 
           <div className="mobile-auth-section">
