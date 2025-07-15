@@ -1,41 +1,164 @@
-.admin-portal-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 24px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+/* Updated AdminPortal.css */
+body {
+  background: #eef1f7;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.admin-portal-container h2 {
-  margin-bottom: 20px;
+.admin-portal-container {
+  max-width: 720px;
+  margin: 80px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.admin-portal-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #2d3748;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.admin-portal-notice {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.admin-portal-email-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.admin-portal-email-label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.admin-email-select {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+  background-color: #f9fafb;
+  font-size: 1rem;
   color: #333;
 }
 
-#user-email-select {
-  margin-bottom: 24px;
-  padding: 8px 12px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 16px;
+.admin-portal-loading,
+.admin-portal-error {
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.admin-portal-loading {
+  color: #4b5563;
+}
+
+.admin-portal-error {
+  color: #e11d48;
+  font-weight: 500;
 }
 
 .admin-tasks-list {
-  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .admin-task-item {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 18px;
-  background: #fafbfc;
+  background: #f9fafb;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
 }
 
-.admin-task-item > div {
-  margin-bottom: 6px;
+.admin-task-title,
+.admin-task-priority {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  color: #1f2937;
 }
 
-.admin-task-item strong {
-  color: #1976d2;
-} 
+.admin-task-title span,
+.admin-task-priority span {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.admin-task-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-access-denied {
+  color: #e53e3e;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.admin-add-task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.admin-add-task-input {
+  flex: 2;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+  font-size: 1rem;
+  background: #f9fafb;
+  color: #333;
+}
+.admin-add-task-priority {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+  font-size: 1rem;
+  background: #f9fafb;
+  color: #333;
+}
+.admin-add-task-btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-add-task-btn:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .admin-portal-container {
+    margin: 60px 16px;
+    padding: 24px;
+  }
+}
